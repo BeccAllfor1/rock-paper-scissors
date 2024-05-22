@@ -1,17 +1,20 @@
 
-//document.addEventListener("DOMContentLoaded"), () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-const choices = ["rock", "paper", "scissors","lizard", "spock" ];
+//const choices = ["rock", "paper", "scissors","lizard", "spock" ];
 let playerChoice = " ";
+let compChoice = " ";
 let resultScreen = ("section-picked");
 
-function startGame() {
-    homeScreen.classList.add("hidden");
-    resultScreen.classList.add("hidden");
-    gameScreen.ClassList.remove("hidden");
+document.querySelectorAll(".player-choice.btn").forEach (btn =>{
+    btn.addEventListener("click", (e) =>{
+        playerChoice = getPlayerChoice (e.target);
+        
 
-    startGame();
-}
+    })
+})
+
+})
 
 
 

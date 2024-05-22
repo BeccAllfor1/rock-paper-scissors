@@ -14,79 +14,78 @@
 </head>
 
 <body>
+    <div class=container>
 
-
-    <section class="title-section">
-        <div class="heading">
-            <h1>Rock, Paper, Scissors, Lizzard, Spock</h1>
-        </div>
-        <div class="score-table">
-            <div class="score-title">Score</div>
-            <div class="score-count">0</div>
-        </div>
-    </section>
-
-
-    <!--player choice-->
-    <div class="player-choice">
-        <button type="button" class="rock-hand btn"><i class="fa-solid fa-hand-back-fist"></i></button>
-        <button type="button" class="paper-hand btn"><i class="fa-solid fa-hand"></i></button>
-        <button type="button" class="scissors-hand btn"><i class="fa-solid fa-hand-scissors"></i></button>
-        <button type="button" class="lizard-hand btn"><i class="fa-solid fa-hand-lizard"></i></button>
-        <button type="button" class="spock-hand btn"><i class="fa-solid fa-hand-spock"></i></button>
-    </div>
-
-    <div class="section-picked hidden">
-        <div class="row">
-
-        <div class="choice-made col">
-            <p>You Picked</p>
-            <div class="user-picked"></div>
-        </div>
-        <div class="result col">
-            <h2 class="title">You Lose!</h2>
-            <div class="play-again-button col">
-                <button class="play-again">PLAY AGAIN</button>
+        <div class="title-section">
+            <div class="heading">
+                <h1>Rock, Paper, Scissors, Lizzard, Spock</h1>
             </div>
-            
-        </div>
-        <div class="choice-made col">
-            <p>Computer Choice</p>
-            <div class="pc-picked"></div>
-        </div>
-    </div>
-
-    </div>
-
-    <!-- Button trigger modal -->
-    <button type="button" class=" btn-primary rules-btn" data-bs-toggle="modal" data-bs-target="#rules">
-        Rules
-    </button>
-
-    <!-- Modal -->
-    <div class="modal fade" id="rules" tabindex="-1" aria-labelledby="rules" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="rules">Rules</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="assets/images/rock paper scissors.jpg" alt="Rules of the game">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn-secondary" data-bs-dismiss="modal">Close</button>
-
-                </div>
+            <div class="score-table">
+                <div class="score-title">Score</div>
+                <div class="score-count">0</div>
             </div>
         </div>
+
+
+        <div class="player-choice">
+            <button type="button" class="rock-hand btn"><i class="fa-solid fa-hand-back-fist"></i></button>
+            <button type="button" class="paper-hand btn"><i class="fa-solid fa-hand"></i></button>
+            <button type="button" class="scissors-hand btn"><i class="fa-solid fa-hand-scissors"></i></button>
+            <button type="button" class="lizard-hand btn"><i class="fa-solid fa-hand-lizard"></i></button>
+            <button type="button" class="spock-hand btn"><i class="fa-solid fa-hand-spock"></i></button>
+        </div>
+
+        <div class="section-picked hidden">
+            <div class="row">
+
+                <div class="choice-made col">
+                    <p>You Picked</p>
+                    <div class="user-picked"></div>
+                </div>
+                <div class="result col">
+                    <h2 class="title">You Lose!</h2>
+                    <div class="play-again-button col">
+                        <button class="play-again">PLAY AGAIN</button>
+                    </div>
+
+                </div>
+                <div class="choice-made col">
+                    <p>Computer Choice</p>
+                    <div class="pc-picked"></div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <button type="button" class=" btn-primary rules-btn" data-bs-toggle="modal" data-bs-target="#rules">
+            Rules
+        </button>
+
+
+        <div class="modal fade" id="rules" tabindex="-1" aria-labelledby="rules" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="rules">Rules</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="assets/images/rock paper scissors.jpg" alt="Rules of the game">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
     </div>
-
-
-
-
-
-
 
 
     <script src="assets/js/script.js"></script>
