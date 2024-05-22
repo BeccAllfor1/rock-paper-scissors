@@ -15,10 +15,10 @@ body {
     background: url("../images/space.jpg") no-repeat;
     background-color: black;
     background-size: cover;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
-img{
+img {
 
     max-width: 100%;
 }
@@ -64,21 +64,28 @@ img{
 
 }
 
-.btn {
+.btn-hand.rock,
+.paper,
+.scissors,
+.lizard,
+.spock {
     border-radius: 50%;
     background-color: rgb(0, 162, 255);
-    font-size: 50px;
+    font-size: 80px;
     border-width: 10px;
     border-color: blueviolet;
     transition: background-color 0.5s ease;
-    margin:0 15px;
+    margin: 0 15px;
+    bottom: 0;
+    right: 178px;
 }
 
-.btn:hover {
+
+.btn-hand:hover {
     background-color: rgb(148, 204, 236);
 }
 
-   .rules-btn {
+.rules-btn {
     background-color: rgb(0, 162, 255);
     border-radius: 15%;
     padding: 10px 25px;
@@ -98,7 +105,7 @@ img{
 
 }
 
-.choice-made {
+.section-picked {
     color: #fff;
 }
 
