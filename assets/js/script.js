@@ -26,11 +26,13 @@ function game() {
                 startGame();
             })
         });
+        resultElement.querySelector("button").addEventListener('click', tryAgain);
     })
     function startGame() {
         calculateWinner(playerChoice, compChoice);
-        playChoiceElement.classList.add ("hidden");
-        pickedElement.classList.remove ("hidden");
+        playChoiceElement.classList.add("hidden");
+        pickedElement.classList.remove("hidden");
+        clearReultBeforeAppend();
         buildChoiceElement(true, playerChoice);
         buildChoiceElement(false, compChoice);
 
@@ -60,17 +62,28 @@ function game() {
     function getPlayerWinsStatus(result) {
         return playerWinResults.some(winStr => winStr === result); l
     }
-
+    
     function buildChoiceElement(isItUserElement, className) {
-        const el = document.createElement('button');
+        const el = document.createElement("button");
+        el.innerHTML = `<i class="fa-solid fa-hand-${className}"></i></button>`;
         el.classList = [`btn-hand ${className}`];
-        el.innerHTML =` <button type="button" class= "btn-hand ${className}"><i></i></button>`;
         if (isItUserElement) {
             playerPickElement.append(el);
         } else {
             pcPickElement.append(el);
         }
     }
+
+    function tryAgain() {
+        playChoiceElement.classList.remove("hidden");
+        pickedElement.classList.add("hidden");
+    }
+
+    function clearReultBeforeAppend () {
+        playerPickElement.innerHTML = "";
+        pcPickElement.innerHTML = "";
+    }
+
 }
 
 game()

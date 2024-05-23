@@ -64,11 +64,7 @@ img {
 
 }
 
-.btn-hand.rock,
-.paper,
-.scissors,
-.lizard,
-.spock {
+.btn-hand{
     border-radius: 50%;
     background-color: rgb(0, 162, 255);
     font-size: 80px;
@@ -115,6 +111,21 @@ img {
     font-size: 25px;
 
 }
+
+.picked .btn-hand {
+    position: static;
+    height: 300px;
+    width: 295px;S
+.pc-picked{
+
+    text-align:center;
+}
+.user-picked{
+
+    text-align:center;
+    
+}
+
 
 .play-again-button {
     text-align: center;
