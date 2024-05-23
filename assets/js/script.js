@@ -12,12 +12,11 @@ function game() {
     const resultElement = document.querySelector(".result");
     const resultTitleElement = resultElement.querySelector(".title");
     const scoreCountElement = document.querySelector(".score-count");
-
     let currentScore = null;
 
     window.addEventListener('load', () => {
-               retrieveScoreFromLocalStorage();
-               
+        retrieveScoreFromLocalStorage();
+
         document.querySelectorAll(".player-choice .btn-hand").forEach(hand => {
 
             hand.addEventListener("click", (e) => {
@@ -29,6 +28,11 @@ function game() {
             })
         });
         resultElement.querySelector("button").addEventListener('click', tryAgain);
+
+        document.getElementById("playSoundButton").addEventListener("click", function () {
+            var audio = new Audio("assets/sound/rock-paper-scissors-lizard-spock-game-rules-rock-paper-scissors-lizard-spock-sheldon-big-bang-theory-101soundboards.mp3");
+            audio.play();
+        });
     })
     function startGame() {
         calculateWinner(playerChoice, compChoice);
@@ -66,7 +70,7 @@ function game() {
     function getPlayerWinsStatus(result) {
         return playerWinResults.some(winStr => winStr === result); l
     }
-    
+
     function buildChoiceElement(isItUserElement, className) {
         const el = document.createElement("button");
         el.innerHTML = `<i class="fa-solid fa-hand-${className}"></i></button>`;
@@ -83,25 +87,25 @@ function game() {
         pickedElement.classList.add("hidden");
     }
 
-    function clearResultBeforeAppend () {
+    function clearResultBeforeAppend() {
         playerPickElement.innerHTML = "";
         pcPickElement.innerHTML = "";
     }
 
-    function calculateScore(roundResult){
-        currentScore+= roundResult;
+    function calculateScore(roundResult) {
+        currentScore += roundResult;
         updateScoreBoard();
     }
- function retrieveScoreFromLocalStorage() {
-    const score = + window.localStorage.getItem("gameScore") || 0;
-    currentScore = score;
-    updateScoreBoard();
+    function retrieveScoreFromLocalStorage() {
+        const score = + window.localStorage.getItem("gameScore") || 0;
+        currentScore = score;
+        updateScoreBoard();
 
- }
- function updateScoreBoard(){
-    scoreCountElement.innerText = currentScore;
-    window.localStorage.setItem("gameScore", currentScore);
- }
+    }
+    function updateScoreBoard() {
+        scoreCountElement.innerText = currentScore;
+        window.localStorage.setItem("gameScore", currentScore);
+    }
 
 }
 
