@@ -1,7 +1,7 @@
 
 function game() {
     const actions = ["rock", "paper", "scissors", "lizard", "spock"];
-    const playerWinResults = ['scissorspaper', 'paperrock', 'rocklizard', 'lizardspock', 'spockscissors',
+    const playerWinResults = ["scissorspaper", 'paperrock', 'rocklizard', 'lizardspock', 'spockscissors',
         'rockscissors', 'scissorslizard', 'lizardpaper', 'paperspock', 'spockrock'];
     let playerChoice = " ";
     let compChoice = " ";
@@ -13,9 +13,11 @@ function game() {
     const resultTitleElement = resultElement.querySelector(".title");
     const scoreCountElement = document.querySelector(".score-count");
 
+    let currentScore = null;
 
     window.addEventListener('load', () => {
-
+               retrieveScoreFromLocalStorage();
+               
         document.querySelectorAll(".player-choice .btn-hand").forEach(hand => {
 
             hand.addEventListener("click", (e) => {
@@ -32,7 +34,7 @@ function game() {
         calculateWinner(playerChoice, compChoice);
         playChoiceElement.classList.add("hidden");
         pickedElement.classList.remove("hidden");
-        clearReultBeforeAppend();
+        clearResultBeforeAppend();
         buildChoiceElement(true, playerChoice);
         buildChoiceElement(false, compChoice);
 
@@ -53,10 +55,12 @@ function game() {
         if (player === comp) {
             resultTitleElement.innerText = `Tie`;
         } else if (getPlayerWinsStatus(player + comp)) {
-            resultTitleElement.innerText = `You, Win!`;
+            resultTitleElement.innerText = `You Win!`;
+            calculateScore(1);
 
         } else {
-            resultTitleElement.innerText = `You, Lose!`;
+            resultTitleElement.innerText = `You Lose!`;
+            calculateScore(-1);
         }
     }
     function getPlayerWinsStatus(result) {
@@ -79,10 +83,25 @@ function game() {
         pickedElement.classList.add("hidden");
     }
 
-    function clearReultBeforeAppend () {
+    function clearResultBeforeAppend () {
         playerPickElement.innerHTML = "";
         pcPickElement.innerHTML = "";
     }
+
+    function calculateScore(roundResult){
+        currentScore+= roundResult;
+        updateScoreBoard();
+    }
+ function retrieveScoreFromLocalStorage() {
+    const score = + window.localStorage.getItem("gameScore") || 0;
+    currentScore = score;
+    updateScoreBoard();
+
+ }
+ function updateScoreBoard(){
+    scoreCountElement.innerText = currentScore;
+    window.localStorage.setItem("gameScore", currentScore);
+ }
 
 }
 

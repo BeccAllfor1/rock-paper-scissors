@@ -37,7 +37,7 @@ img {
 
 .title-section {
     padding-top: 20px;
-    font-size: 20px;
+    font-size: 30px;
     font-family: "Oswald", sans-serif;
     text-align: center;
     color: #fff;
@@ -46,19 +46,21 @@ img {
 }
 
 .score-count {
-    font-size: 50px;
+    padding-top: 30px;
+    font-size: 70px;
     font-weight: 700;
 }
 
 .score-title {
-    font-size: 30px;
+    padding-top: 30px;
+    font-size: 50px;
     font-weight: 500px;
 }
 
 
 
 .player-choice {
-    padding-top: 50px;
+    padding-top: 80px;
     align-items: center;
     text-align: center;
 
@@ -115,14 +117,16 @@ img {
 .picked .btn-hand {
     position: static;
     height: 300px;
-    width: 295px;S
+    width: 295px;
+}
 .pc-picked{
 
-    text-align:center;
+    text-align:start;
 }
 .user-picked{
 
-    text-align:center;
+    text-align: end;
+    justify-content: end;
     
 }
 
@@ -132,15 +136,26 @@ img {
 }
 
 .play-again {
-    border-radius: 20%;
+    border-radius: 15%;
     margin-top: 30px;
-
+    font-size: 30px;
+    border-color: blueviolet;
+    border-width: 10px;
 }
 
 .title {
     text-align: center;
 }
 
+h1{
+    padding-top: 20px;
+    font-size: 50px;
+}
+
 p {
-    text-align: center;
+    text-align: start;
+    
+}
+.you-picked{
+    text-align: end;
 }
